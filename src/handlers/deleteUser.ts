@@ -1,6 +1,6 @@
 import { gettingUser } from './common.ts';
-import { UserDB } from '../userDb.ts';
-import { makeJsonResponse} from './utils.ts';
+import { UserService } from '../UserService.ts';
+import { makeResponse } from './utils.ts';
 import { STATUS_CODES } from '../constants.ts';
 
 
@@ -11,7 +11,7 @@ export const deleteUser = (request, response) => {
         return;
     }
 
-    UserDB.deleteUser(user.id);
+    UserService.deleteUser(user.id);
 
-    makeJsonResponse(response, STATUS_CODES.DELETED, { message: 'User deleted successfully' });
+    makeResponse(response, STATUS_CODES.DELETED);
 };

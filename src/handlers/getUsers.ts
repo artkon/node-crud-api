@@ -1,8 +1,8 @@
-import { UserDB } from '../userDb.ts';
+import { UserService } from '../UserService.ts';
 
 import { STATUS_CODES } from '../constants.ts';
-import { makeJsonResponse } from './utils.ts';
+import { makeResponse } from './utils.ts';
 
 export const getUsers = (request, response) => {
-    makeJsonResponse(response, STATUS_CODES.SUCCESS, { users: UserDB.getUsers() });
+    makeResponse(response, STATUS_CODES.SUCCESS, { users: UserService.getUsers() });
 };

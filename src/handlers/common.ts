@@ -1,24 +1,24 @@
 import { getRequestURL, getUserIdFromPath } from '../utils.ts';
-import { UserDB } from '../userDb.ts';
-import { makeJsonResponse } from './utils.js';
-import { STATUS_CODES } from '../constants.js';
+import { UserService } from '../UserService.ts';
+import { makeResponse } from './utils.ts';
+import { STATUS_CODES } from '../constants.ts';
 
 export const gettingUser = (request, response) => {
     const { pathname } = getRequestURL(request);
 
     const uuid = getUserIdFromPath(pathname);
-    const isValidUUID = UserDB.getIsValidUUID(uuid);
+    const isValidUUID = UserService.getIsValidUUID(uuid);
 
     if (!isValidUUID) {
-        makeJsonResponse(response, STATUS_CODES.INVALID, { message: 'Provided userId is invalid' });
+        makeResponse(response, STATUS_CODES.INVALID, { message: 'Provided userId is invalid' });
 
         return;
     }
 
-    const user = UserDB.getUser(uuid);
+    const user = UserService.getUser(uuid);
 
     if (!user) {
-        makeJsonResponse(response, STATUS_CODES.NOT_FOUND, { message: 'Requested user not found' });
+        makeResponse(response, STATUS_CODES.NOT_FOUND, { message: 'Requested user not found' });
 
         return;
     }

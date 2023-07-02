@@ -14,8 +14,11 @@ export enum METHODS {
     DELETE = 'DELETE',
 }
 
-export const NOT_FOUND_MESSAGE = 'Oops! The requested resource could not be found. Please check the API endpoint or verify the request parameters.';
+export const NOT_FOUND_MESSAGE: string = 'Oops! The requested resource could not be found. Please check the API endpoint or verify the request parameters.';
 
 export const CONTENT_TYPE_JSON = { 'Content-Type': 'application/json' };
+export const CONTENT_TYPE_TEXT = { 'Content-Type': 'text/plain' };
 
-export const API_USERS = '/api/users';
+export const API_USERS: string  = '/api/users';
+
+export const UUID_REGEXP = /[0-9a-fA-F]{8}\b-[0-9a-fA-F]{4}\b-[0-9a-fA-F]{4}\b-[0-9a-fA-F]{4}\b-[0-9a-fA-F]{12}$/

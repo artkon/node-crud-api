@@ -1,12 +1,21 @@
-import { CONTENT_TYPE_JSON } from '../constants.ts';
+import { ServerResponse, ClientRequest } from 'http';
+
+import { CONTENT_TYPE_JSON, CONTENT_TYPE_TEXT } from '../constants.ts';
 
 
-export const makeJsonResponse = (response, status, data) => {
-    response.writeHead(status, CONTENT_TYPE_JSON);
+export const makeResponse = (
+    response: ServerResponse,
+    status: number,
+    data?: object,
+) => {
+    response.writeHead(status, data ? CONTENT_TYPE_JSON : CONTENT_TYPE_TEXT);
     response.end(JSON.stringify(data));
 };
 
-export const getRequestBody = (request, callback) => {
+export const getRequestBody = (
+    request: ClientRequest,
+    callback: (data: string) => void,
+): void => {
     let data = '';
 
     request.on('data', (chunk) => {

@@ -1,20 +1,20 @@
-import { UserDB } from '../userDb.ts';
+import { UserService } from '../UserService.ts';
 
-import { STATUS_CODES } from '../constants.js';
-import { getRequestBody, makeJsonResponse } from './utils.ts';
+import { STATUS_CODES } from '../constants.ts';
+import { getRequestBody, makeResponse } from './utils.ts';
 
 export const createUser = (request, response) => {
     getRequestBody(request, (userData) => {
         const { username, age, hobbies } = JSON.parse(userData);
 
-        if (!UserDB.getIsValidUserData({ username, age, hobbies })) {
-            makeJsonResponse(response, STATUS_CODES.INVALID, { message: 'Incorrect user data' });
+        if (!UserService.getIsValidUserData({ username, age, hobbies })) {
+            makeResponse(response, STATUS_CODES.INVALID, { message: 'Incorrect user data' });
 
             return;
         }
 
-        const user = UserDB.createUser({ username, age, hobbies });
+        const user = UserService.createUser({ username, age, hobbies });
 
-        makeJsonResponse(response, STATUS_CODES.CREATED, { user });
+        makeResponse(response, STATUS_CODES.CREATED, { user });
     });
 };

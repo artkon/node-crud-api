@@ -6,7 +6,7 @@ import { router } from './router.ts';
 
 const mainPort = process.env['PORT'];
 
-const server = http.createServer((request, response) => {
+export const server = http.createServer((request, response) => {
     router(request, response);
 });
 

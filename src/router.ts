@@ -1,15 +1,16 @@
 import { createUser, getUser, getUsers, unknownRequest, updateUser, deleteUser } from './handlers/index.ts';
 
-import {getRequestURL, isApiUserIdPath, isApiUserPath} from './utils.ts';
+import { getRequestURL, isApiUserIdPath, isApiUserPath } from './utils.ts';
 import { METHODS, STATUS_CODES } from './constants.ts';
-import { makeJsonResponse } from './handlers/utils.ts';
+import { makeResponse } from './handlers/utils.ts';
 
 
 const errorHandler = (func) => (request, response) => {
     try {
         func(request, response);
-    } catch {
-        makeJsonResponse(response, STATUS_CODES.SERVER_ERROR, { message: 'Internal Server Error' });
+    } catch (e){
+        console.log(e)
+        makeResponse(response, STATUS_CODES.SERVER_ERROR, { message: 'Internal Server Error' });
     }
 };
 
