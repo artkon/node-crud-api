@@ -29,6 +29,9 @@ class UserServiceClass {
     getUsers() {
         return this.db.users;
     }
+    setUsers(users) {
+        this.db.users = users;
+    }
     getUser(uuid) {
         return this.db.users.find(({ id }) => (id === uuid));
     }

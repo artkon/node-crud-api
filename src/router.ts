@@ -8,8 +8,7 @@ import { makeResponse } from './handlers/utils.ts';
 const errorHandler = (func) => (request, response) => {
     try {
         func(request, response);
-    } catch (e){
-        console.log(e)
+    } catch {
         makeResponse(response, STATUS_CODES.SERVER_ERROR, { message: 'Internal Server Error' });
     }
 };

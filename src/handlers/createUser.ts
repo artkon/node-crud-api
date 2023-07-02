@@ -1,7 +1,10 @@
-import { UserService } from '../UserService.ts';
+import cluster from 'node:cluster';
 
+import { UserService } from '../UserService.ts';
 import { STATUS_CODES } from '../constants.ts';
+
 import { getRequestBody, makeResponse } from './utils.ts';
+
 
 export const createUser = (request, response) => {
     getRequestBody(request, (userData) => {
@@ -14,6 +17,10 @@ export const createUser = (request, response) => {
         }
 
         const user = UserService.createUser({ username, age, hobbies });
+
+        if (cluster.isWorker) {
+            process.send(UserService.getUsers());
+        }
 
         makeResponse(response, STATUS_CODES.CREATED, { user });
     });

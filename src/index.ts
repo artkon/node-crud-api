@@ -8,6 +8,4 @@ const mainPort = process.env['PORT'];
 
 export const server = http.createServer((request, response) => {
     router(request, response);
-});
-
-server.listen(mainPort);
+}).listen(mainPort);

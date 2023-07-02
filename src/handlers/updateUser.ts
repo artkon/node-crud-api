@@ -1,3 +1,5 @@
+import cluster from 'node:cluster';
+
 import { UserService } from '../UserService.ts';
 import { STATUS_CODES } from '../constants.ts';
 
@@ -22,6 +24,10 @@ export const updateUser = (request, response) => {
         }
 
         Object.assign(user, { username, age, hobbies });
+
+        if (cluster.isWorker) {
+            process.send(UserService.getUsers());
+        }
 
         makeResponse(response, STATUS_CODES.SUCCESS, { user });
     });
