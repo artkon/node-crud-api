@@ -1,5 +1,5 @@
-import { NOT_FOUND_MESSAGE, STATUS_CODES } from '../constants.ts';
-import { makeResponse } from './utils.ts';
+import { NOT_FOUND_MESSAGE, STATUS_CODES } from '../constants.js';
+import { makeResponse } from './utils.js';
 
 
 export const unknownRequest = (request, response) => {

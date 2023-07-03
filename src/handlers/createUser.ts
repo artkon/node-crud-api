@@ -1,9 +1,9 @@
 import cluster from 'node:cluster';
 
-import { UserService } from '../UserService.ts';
-import { STATUS_CODES } from '../constants.ts';
+import { UserService } from '../UserService.js';
+import { STATUS_CODES } from '../constants.js';
 
-import { getRequestBody, makeResponse } from './utils.ts';
+import { getRequestBody, makeResponse } from './utils.js';
 
 
 export const createUser = (request, response) => {

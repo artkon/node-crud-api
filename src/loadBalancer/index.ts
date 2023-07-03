@@ -3,7 +3,7 @@ import os from 'node:os';
 import cluster from 'node:cluster';
 import http from 'node:http';
 
-import { router } from '../router.ts';
+import { router } from '../router.js';
 import { UserService } from '../UserService.js';
 
 

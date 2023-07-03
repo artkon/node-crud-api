@@ -6,8 +6,7 @@
         "target": "ES2020",
         "sourceMap": true,
         "rootDir": "src",
-        "outDir": "dist",
-        "allowImportingTsExtensions": true
+        "outDir": "dist"
     },
     "include": ["src/**/*"]
 }

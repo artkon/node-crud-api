@@ -1,6 +1,6 @@
 import { ServerResponse, ClientRequest } from 'http';
 
-import { CONTENT_TYPE_JSON, CONTENT_TYPE_TEXT } from '../constants.ts';
+import { CONTENT_TYPE_JSON, CONTENT_TYPE_TEXT } from '../constants.js';
 
 
 export const makeResponse = (

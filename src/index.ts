@@ -1,7 +1,7 @@
 import 'dotenv/config';
 import http from 'node:http';
 
-import { router } from './router.ts';
+import { router } from './router.js';
 
 
 const mainPort = process.env['PORT'];

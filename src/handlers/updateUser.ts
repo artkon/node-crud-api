@@ -1,10 +1,10 @@
 import cluster from 'node:cluster';
 
-import { UserService } from '../UserService.ts';
-import { STATUS_CODES } from '../constants.ts';
+import { UserService } from '../UserService.js';
+import { STATUS_CODES } from '../constants.js';
 
-import { getRequestBody, makeResponse } from './utils.ts';
-import { gettingUser } from './common.ts';
+import { getRequestBody, makeResponse } from './utils.js';
+import { gettingUser } from './common.js';
 
 
 export const updateUser = (request, response) => {

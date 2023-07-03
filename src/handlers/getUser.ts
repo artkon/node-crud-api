@@ -1,6 +1,6 @@
-import { STATUS_CODES } from '../constants.ts';
-import { makeResponse } from './utils.ts';
-import { gettingUser } from './common.ts';
+import { STATUS_CODES } from '../constants.js';
+import { makeResponse } from './utils.js';
+import { gettingUser } from './common.js';
 
 
 export const getUser = (request, response) => {

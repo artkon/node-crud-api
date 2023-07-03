@@ -1,9 +1,9 @@
-import { getUser } from './getUser.ts';
-import { getUsers } from './getUsers.ts';
-import { createUser } from './createUser.ts';
-import { updateUser } from './updateUser.ts';
-import { deleteUser } from './deleteUser.ts';
-import { unknownRequest } from './unknownRequest.ts';
+import { getUser } from './getUser.js';
+import { getUsers } from './getUsers.js';
+import { createUser } from './createUser.js';
+import { updateUser } from './updateUser.js';
+import { deleteUser } from './deleteUser.js';
+import { unknownRequest } from './unknownRequest.js';
 
 
 export {

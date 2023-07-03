@@ -1,7 +1,7 @@
 import request from 'supertest';
 
-import { server } from '../index.ts';
-import { API_USERS, STATUS_CODES } from '../constants.ts';
+import { server } from '../index.js';
+import { API_USERS, STATUS_CODES } from '../constants.js';
 
 
 const testUser = { username: 'Artem', age: 25, hobbies: ['js', 'nodejs'] };

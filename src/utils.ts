@@ -1,4 +1,4 @@
-import { API_USERS } from './constants.ts';
+import { API_USERS } from './constants.js';
 
 
 export const getRequestURL = (request) => {

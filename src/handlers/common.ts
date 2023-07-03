@@ -1,7 +1,7 @@
-import { getRequestURL, getUserIdFromPath } from '../utils.ts';
-import { UserService } from '../UserService.ts';
-import { makeResponse } from './utils.ts';
-import { STATUS_CODES } from '../constants.ts';
+import { getRequestURL, getUserIdFromPath } from '../utils.js';
+import { UserService } from '../UserService.js';
+import { makeResponse } from './utils.js';
+import { STATUS_CODES } from '../constants.js';
 
 export const gettingUser = (request, response) => {
     const { pathname } = getRequestURL(request);

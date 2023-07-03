@@ -1,7 +1,7 @@
-import { UserService } from '../UserService.ts';
+import { UserService } from '../UserService.js';
 
-import { STATUS_CODES } from '../constants.ts';
-import { makeResponse } from './utils.ts';
+import { STATUS_CODES } from '../constants.js';
+import { makeResponse } from './utils.js';
 
 export const getUsers = (request, response) => {
     makeResponse(response, STATUS_CODES.SUCCESS, { users: UserService.getUsers() });

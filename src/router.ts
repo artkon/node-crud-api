@@ -1,8 +1,8 @@
-import { createUser, getUser, getUsers, unknownRequest, updateUser, deleteUser } from './handlers/index.ts';
+import { createUser, getUser, getUsers, unknownRequest, updateUser, deleteUser } from './handlers/index.js';
 
-import { getRequestURL, isApiUserIdPath, isApiUserPath } from './utils.ts';
-import { METHODS, STATUS_CODES } from './constants.ts';
-import { makeResponse } from './handlers/utils.ts';
+import { getRequestURL, isApiUserIdPath, isApiUserPath } from './utils.js';
+import { METHODS, STATUS_CODES } from './constants.js';
+import { makeResponse } from './handlers/utils.js';
 
 
 const errorHandler = (func) => (request, response) => {

@@ -1,6 +1,6 @@
 import { randomUUID } from 'node:crypto';
 
-import { UUID_REGEXP } from './constants.ts';
+import { UUID_REGEXP } from './constants.js';
 
 
 interface User {
